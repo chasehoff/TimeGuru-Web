@@ -6,10 +6,12 @@ import Companies from '../../components/companies';
 import Display from '../../components/displays';
 import About from '../../components/about';
 import Footer from '../../components/footer';
+import Navigation from '../../components/navigation';
 
 function Home() {
     return(
         <div className="home-container">
+        <Navigation />
             <div className="hero-section">
                 <div className="hero-item">
                     <h3>Get Organized!</h3>

@@ -35,14 +35,15 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+console.log(store);
 
 class App extends Component {
+  
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navigation />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />

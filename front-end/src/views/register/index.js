@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { registerUser } from "../../actions/authActions";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames";
+import Navigation from '../../components/navigation';
 
 class Register extends Component {
      
@@ -53,23 +54,27 @@ class Register extends Component {
     render () {
         const { errors, name, email, password, password2 } = this.state;
         return (
-            <div className="register__container">
-                <div className="register__modal">
-                    <AccountCircleIcon className="register__icon" />
-                    <h3>Register</h3>
-                    <form className="register__modal__form" method="post" onSubmit={this.onSubmit}>
-                        <span className="validation__errors">{errors.name}</span>
-                        <TextField id="name" error={errors.name} type="text" required className="register__textField" label="Name" variant="outlined" value={name} onChange={this.onChange} />
-                        <span className="validation__errors">{errors.email}</span>
-                        <TextField id="email" error={errors.email} type="email" required className="register__textField" label="Email" variant="outlined" value={email} onChange={this.onChange} />
-                        <span className="validation__errors">{errors.password}</span>
-                        <TextField id="password" error={errors.password} type="password" required className="register__textField" label="Password" variant="outlined" value={password} onChange={this.onChange} />
-                        <span className="validation__errors">{errors.password2}</span>
-                        <TextField id="password2" error={errors.password2} type="password" required className="register__textField" label="Re-Type Password" variant="outlined" value={password2} onChange={this.onChange}/>
-                        <input className="register__button" type="submit" value="Create Account" />
-                    </form>
+            
+                <div>
+                    <Navigation />
+                    <div className="register__container">
+                        <div className="register__modal">
+                            <AccountCircleIcon className="register__icon" />
+                            <h3>Register</h3>
+                            <form className="register__modal__form" method="post" onSubmit={this.onSubmit}>
+                                <span className="validation__errors">{errors.name}</span>
+                                <TextField id="name" error={errors.name} type="text" required className="register__textField" label="Name" variant="outlined" value={name} onChange={this.onChange} />
+                                <span className="validation__errors">{errors.email}</span>
+                                <TextField id="email" error={errors.email} type="email" required className="register__textField" label="Email" variant="outlined" value={email} onChange={this.onChange} />
+                                <span className="validation__errors">{errors.password}</span>
+                                <TextField id="password" error={errors.password} type="password" required className="register__textField" label="Password" variant="outlined" value={password} onChange={this.onChange} />
+                                <span className="validation__errors">{errors.password2}</span>
+                                <TextField id="password2" error={errors.password2} type="password" required className="register__textField" label="Re-Type Password" variant="outlined" value={password2} onChange={this.onChange}/>
+                                <input className="register__button" type="submit" value="Create Account" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
         )
     }
 }

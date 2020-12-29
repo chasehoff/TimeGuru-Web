@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import './index.css';
+import Navigation from '../../components/navigation';
 
 class Login extends Component {
     state = {
@@ -47,24 +48,27 @@ class Login extends Component {
     render() {
         const {errors, email, password } = this.state;
         return (
-            <div className="login__container">
-                <div className="login__modal">
-                    <AccountCircleIcon className="login__icon" />
-                    <h3>Sign In</h3>
-                    <form className="login__modal__form" onSubmit={this.handleSubmit}>
-                        <div>
-                            <span>{errors.email}</span>
-                            <span>{errors.emailnotfound}</span>
-                        </div>
-                        <TextField errors={errors.email} id="email" type="email" className="login__textField" label="Email" variant="outlined" value={email} onChange={this.onChange} />
-                        <div>
-                            <span>{errors.password}</span>
-                            <span>{errors.passwordincorrect}</span>
-                        </div>
-                        <TextField errors={errors.password} id="password" type="password" className="login__textField" label="Password" variant="outlined" value={password} onChange={this.onChange} />
-                        <p>Don't have an account? Sign up <span><Link to="/register">here</Link></span>!</p>
-                        <input className="login__button" type="submit" value="Login" />
-                    </form>
+            <div>
+                <Navigation />
+                <div className="login__container">
+                    <div className="login__modal">
+                        <AccountCircleIcon className="login__icon" />
+                        <h3>Sign In</h3>
+                        <form className="login__modal__form" onSubmit={this.handleSubmit}>
+                            <div>
+                                <span>{errors.email}</span>
+                                <span>{errors.emailnotfound}</span>
+                            </div>
+                            <TextField errors={errors.email} id="email" type="email" className="login__textField" label="Email" variant="outlined" value={email} onChange={this.onChange} />
+                            <div>
+                                <span>{errors.password}</span>
+                                <span>{errors.passwordincorrect}</span>
+                            </div>
+                            <TextField errors={errors.password} id="password" type="password" className="login__textField" label="Password" variant="outlined" value={password} onChange={this.onChange} />
+                            <p>Don't have an account? Sign up <span><Link to="/register">here</Link></span>!</p>
+                            <input className="login__button" type="submit" value="Login" />
+                        </form>
+                    </div>
                 </div>
             </div>
         )
