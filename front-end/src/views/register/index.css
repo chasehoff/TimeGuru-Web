@@ -1,0 +1,52 @@
+.register__container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register__modal {
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 42px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 42px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 42px 0px rgba(0,0,0,1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 6px;
+    padding: 30px;
+}
+.register__icon {
+    font-size: 70px !important;
+    margin: 0 auto !important;
+}
+.register__modal h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+.register__modal__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.register__textField {
+    margin: 15px !important;
+}
+.register__button {
+    background-color: #00FDDC !important;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(158,153,158,1);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(158,153,158,1);
+    box-shadow: 0px 0px 13px 0px rgba(158,153,158,1);
+    margin: 1em auto 0 auto !important;
+}
+.register__button {
+    background-color: #00FDDC ;
+    padding: 10px 35px;
+    border: none;
+}
+.validation__errors {
+    position: relative;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #ff6b6b;
+}

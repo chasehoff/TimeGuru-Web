@@ -1,0 +1,22 @@
+{
+  "name": "timeguru",
+  "version": "1.0.0",
+  "description": "Time and Employee management system.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd front-end && npm run start\" \"cd back-end && npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Chashoff@bitbucket.org/Chashoff/timeguru.git"
+  },
+  "author": "Chase Hoffman",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Chashoff/timeguru#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "is-empty": "^1.2.0",
+    "prop-types": "^15.7.2"
+  }
+}

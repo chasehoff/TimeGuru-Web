@@ -1,0 +1,82 @@
+.about-outer-container {
+    padding-top: 2em;
+    background-color: white;
+    position: relative;
+}
+.about-inner-container {
+    margin-top: 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.about-inner-container h2 {
+    margin-bottom: 2em;
+}
+.about-container {
+    display: flex;
+    flex-direction: row;
+}
+.about-container p {
+    margin-bottom: 2em;
+}
+.about-item {
+    width: 40%;
+    margin: 0 auto;
+}
+.wave-two {
+    position: relative;
+    z-index: 10;
+    bottom: 125px;
+}
+.img-placeholder {
+    height: 550px;
+}
+.about-container:nth-of-type(2) {
+    margin-top: 4em;
+}
+.img-placeholder-two {
+    height: 450px;
+    margin: 0 auto;
+}
+.about-item li {
+    list-style: none;
+    font-size: 1em;
+    padding: .75em 0 .75em 0;
+    font-weight: 700;
+}
+.border-bottom {
+    border-bottom: 1px solid darkgrey;
+}
+.subscribe-container {
+    margin-top: 4em;
+}
+.subscribe-inner-container {
+    max-width: 1200px;
+    padding: 6em 0 6em 0;
+    margin: 0 auto;
+    display: column;
+}
+.subscribe-inner-container h3 {
+    font-size: 1.6em;
+    padding-bottom: 1em;
+    margin-left: 11%;
+}
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+}
+.subscribe-form input {
+    width: 60%;
+    padding: .5em;
+    font-size: 1.3em;
+    border-radius: 4px;
+    border: 2px solid darkgrey
+}
+.subscribe-form button {
+    margin-left: 2em;
+    font-size: 1.3em;
+    padding: .5em 2em .5em 2em;
+    border-radius: 30px;
+    border: none;
+    background-color: #00FDDC;
+    color: white;
+}

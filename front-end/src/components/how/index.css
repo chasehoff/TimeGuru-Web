@@ -1,0 +1,99 @@
+.how-container {
+    background-color: white;
+    position: relative;
+    padding-bottom: 4em;
+}
+.how-container h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+.how-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto 3em auto;
+    position: relative;
+}
+.hero-wave {
+    position: relative;
+    bottom: 150px;
+}
+.pos-categories {
+    position: relative;
+}
+.how-image {
+    height: 130px;
+    width: 220px;
+    margin: 0 auto;
+}
+.how-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.how-item h4 {
+    text-align: center;
+    font-size: 1.4em;
+    padding-top: .5em;
+}
+.how-item p {
+    text-align: center;
+    padding-top: 1em;
+    max-width: 300px;
+}
+#image-management {
+    position: relative;
+    right: 10px;
+}
+#image-tactics {
+    position: relative;
+    right: 20px;
+}
+
+/* ocean animation */
+.ocean { 
+    height: 5%;
+    width:100%;
+    position:absolute;
+    top: 0;
+    left:0;
+    background: #fff;
+  }
+  
+  .wave {
+    background: url("../../images/wave.svg") repeat-x; 
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+  
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+  
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0,-25px,0);
+    }
+    50% {
+      transform: translate3d(0,5px,0);
+    }
+  }
