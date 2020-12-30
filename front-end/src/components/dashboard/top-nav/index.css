@@ -1,0 +1,13 @@
+.dashboard__top__nav {
+    background-color: #2E2E2E;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.guru__head {
+    height: 35px;
+}
+.profile__settings {
+    display: flex;
+    flex-direction: row-reverse;
+}
