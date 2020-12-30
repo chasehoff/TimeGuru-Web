@@ -4,10 +4,28 @@
     display: flex;
     justify-content: space-between;
 }
+.guru__logo__container {
+    display: flex;
+    align-items: center;
+}
 .guru__head {
     height: 35px;
 }
 .profile__settings {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    color: white;
+}
+.profile__settings h5 {
+    font-size: 15px;
+}
+.smaller__profile__picture {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    padding: 0 .5rem;
+}
+.top__nav__icons {
+    color: lightgrey !important;
 }
