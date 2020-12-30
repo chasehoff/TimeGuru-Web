@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import TopNav from "../../components/dashboard/top-nav/TopNav";
+import SideNav from "../../components/dashboard/side-nav/SideNav";
+import './index.css'
 
 class Dashboard extends Component {
     onLogoutClick = (e) => {
@@ -10,13 +12,14 @@ class Dashboard extends Component {
         this.props.logoutUser();
     };
     render() {
-        const { user } = this.props.auth;
-        console.log(this.props);
         return (
-            <div>
+            <div className="dashboard__container">
                 <TopNav />
-                <h1>{user.name}</h1>
-                <button onClick={this.onLogoutClick}>Logout</button>
+                <div className="dashboard__second__container">
+                    <SideNav />
+                    <div></div>
+                    <button onClick={this.onLogoutClick}>Logout</button>
+                </div>
             </div>
         )
     }

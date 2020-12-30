@@ -3,6 +3,7 @@
     padding: .5rem 1rem;
     display: flex;
     justify-content: space-between;
+    height:6vh;
 }
 .guru__logo__container {
     display: flex;
