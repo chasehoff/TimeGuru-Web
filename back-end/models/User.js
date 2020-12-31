@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { string } = require("prop-types");
 const Schema = mongoose.Schema;
 // Create Schema
 const UserSchema = new Schema({
