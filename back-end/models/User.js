@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { string } = require("prop-types");
 const Schema = mongoose.Schema;
 // Create Schema
 const UserSchema = new Schema({
@@ -17,6 +18,11 @@ const UserSchema = new Schema({
   profilePicture: {
     type: String,
     required: false
+  },
+  tier: {
+    type: String,
+    default: "Free",
+    required: true
   },
   date: {
     type: Date,

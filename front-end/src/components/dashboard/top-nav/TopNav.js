@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import SettingsIcon from '@material-ui/icons/Settings';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
-import { Icon } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 function TopNav() {
     //delete later testing purposes
@@ -17,7 +17,9 @@ function TopNav() {
             </div>
             <div className="profile__settings">
                 <h5>{user.email}</h5>
-                <img className="smaller__profile__picture" src={user.profilePicture} alt="" />
+                {
+                    user.profilePicture ? <img className="smaller__profile__picture" src={user.profilePicture} alt="Profile picture" /> : <AccountCircleIcon className="smaller__profile__picture top__profile__icon" />
+                }
                 <IconButton>
                     <SettingsIcon fontSize="large" className="top__nav__icons" />
                 </IconButton>

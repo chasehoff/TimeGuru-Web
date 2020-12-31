@@ -26,6 +26,8 @@
     height: 45px;
     width: 45px;
     padding: 0 .5rem;
+    color: lightgrey;
+    font-size: 45px !important;
 }
 .top__nav__icons {
     color: lightgrey !important;

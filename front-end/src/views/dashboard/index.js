@@ -17,8 +17,10 @@ class Dashboard extends Component {
                 <TopNav />
                 <div className="dashboard__second__container">
                     <SideNav />
-                    <div></div>
-                    <button onClick={this.onLogoutClick}>Logout</button>
+                    <div>
+                        <button onClick={this.onLogoutClick}>Logout</button>
+                    </div>
+                    
                 </div>
             </div>
         )
