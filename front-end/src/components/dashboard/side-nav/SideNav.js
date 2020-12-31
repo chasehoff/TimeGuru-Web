@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './index.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Divider from '@material-ui/core/Divider';
 
 function SideNav() {
     const user = useSelector(state => state.auth.user);
@@ -14,6 +15,7 @@ function SideNav() {
                 }
                 <h5 className="side__nav__email">{user.email}</h5>
                 <h6>Your tier: <span className="side__nav__tier">{user.tier}</span></h6>
+                <Divider />
             </div>
         </div>
     )
