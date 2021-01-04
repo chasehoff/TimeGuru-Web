@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './index.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Divider from '@material-ui/core/Divider';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import TimelapseIcon from '@material-ui/icons/Timelapse';
+import { NavLink } from 'react-router-dom';
+
+import './index.css';
 
 function SideNav() {
     const user = useSelector(state => state.auth.user);
@@ -23,18 +25,19 @@ function SideNav() {
                     <div className="side__nav__navigation__section">
                         <h4 className="side__nav__category">Management</h4>
                         <ul>
-                            <li className="side__nav__section__item">
+                        
+                            <NavLink className="no__underline side__nav__section__item" exact activeClassName="active__two" to="/dashboard">
                                 <DashboardIcon className="side__nav__section__icon" />
                                 Dashboard
-                            </li>
-                            <li className="side__nav__section__item">
+                            </NavLink>
+                            <NavLink className="no__underline side__nav__section__item" activeClassName="active__two" to="/dashboard/kanban">
                                 <FormatListBulletedIcon className="side__nav__section__icon" />
                                 Kanban
-                            </li>
-                            <li className="side__nav__section__item">
+                            </NavLink>
+                            <NavLink className="no__underline side__nav__section__item" activeClassName="active__two" to="/dashboard/time-management">
                                 <TimelapseIcon className="side__nav__section__icon"/>
                                 Time
-                            </li>
+                            </NavLink>
                         </ul>
                     </div>
                     

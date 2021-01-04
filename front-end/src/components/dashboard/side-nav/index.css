@@ -55,3 +55,9 @@
     font-size: 30px !important;
     padding-right: .25em;
 }
+.no__underline {
+    text-decoration: none;
+}
+.active__two {
+    border-right: 3px solid lightblue;
+}
