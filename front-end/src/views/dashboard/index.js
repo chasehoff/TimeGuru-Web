@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import TopNav from "../../components/dashboard/top-nav/TopNav";
 import SideNav from "../../components/dashboard/side-nav/SideNav";
+import { Route, Switch } from "react-router-dom";
 import './index.css'
+import Test from "../../components/test/Test";
 
 class Dashboard extends Component {
     onLogoutClick = (e) => {

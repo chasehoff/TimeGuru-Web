@@ -68,3 +68,13 @@ p {
 .App {
   margin: 0 auto;
 }
+.dashboard__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.dashboard__second__container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}

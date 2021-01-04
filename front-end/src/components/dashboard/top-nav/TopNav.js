@@ -13,7 +13,7 @@ function TopNav() {
     return (
         <div className="dashboard__top__nav">
             <div className="guru__logo__container">
-                <img className="guru__head" src="./images/guru_head.svg" alt="" />
+                <img className="guru__head" src="../../../images/guru_head.svg" alt="" />
             </div>
             <div className="profile__settings">
                 <h5>{user.email}</h5>

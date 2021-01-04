@@ -34,3 +34,24 @@
 .side__nav__tier {
     color: lightblue
 }
+.side__nav__navigation__container {
+    display: flex;
+    flex-direction: column;
+    padding: .75em 0 .75em .75em;
+}
+.side__nav__category {
+    color: darkgrey;
+    font-weight: 600;
+    font-size: 15px;
+    padding-bottom: .5em;
+}
+.side__nav__section__item {
+    padding: .75em .5em;
+    color: darkgrey;
+    display: flex;
+    align-items: center;
+}
+.side__nav__section__icon {
+    font-size: 30px !important;
+    padding-right: .25em;
+}
