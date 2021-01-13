@@ -5,6 +5,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { NavLink } from 'react-router-dom';
 
 function TopNav() {
     //delete later testing purposes
@@ -21,7 +22,9 @@ function TopNav() {
                     user.profilePicture ? <img className="smaller__profile__picture" src={user.profilePicture} alt="Profile picture" /> : <AccountCircleIcon className="smaller__profile__picture top__profile__icon" />
                 }
                 <IconButton>
-                    <SettingsIcon fontSize="large" className="top__nav__icons" />
+                    <NavLink to="/dashboard/settings">
+                        <SettingsIcon fontSize="large" className="top__nav__icons" />
+                    </NavLink>
                 </IconButton>
                 <IconButton>
                     <NotificationsIcon fontSize="large" className="top__nav__icons" />

@@ -1,0 +1,38 @@
+.dashboard__content__container {
+    display: flex;
+    flex-direction: row !important;
+    padding: 1em;
+    width: 90%;
+}
+.settings__top__bar {
+display: flex;
+flex-direction: row;
+justify-content: center;
+width: 100%;
+}
+.settings__user__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.settings__user__info__header {
+    text-align: center;
+    color: darkgrey;
+}
+.profile__picture__settings {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+}
+.edit__profile__picture {
+    font-size: 200px !important;
+    margin: .15em auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.picture__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

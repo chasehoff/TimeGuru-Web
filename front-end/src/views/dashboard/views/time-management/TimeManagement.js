@@ -10,7 +10,7 @@ function Test() {
             <div className="dashboard__second__container">
                 <SideNav />
                 {/* Main Dashboard Data */}
-                <div>
+                <div className="dashboard__content__container">
                     <h1>Time Management</h1>
                 </div>
                 

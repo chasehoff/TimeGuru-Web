@@ -14,10 +14,11 @@ import Register from './views/register';
 import DashBoard from './views/dashboard';
 import { Provider } from 'react-redux';
 import store from "./store";
-import './App.css';
-import { Component } from 'react';
 import Kanban from './views/dashboard/views/kanban/Kanban';
 import TimeManagement from './views/dashboard/views/time-management/TimeManagement';
+import Settings from './views/dashboard/views/settings/Settings';
+
+import './App.css';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,8 +55,9 @@ function App() {
               <Route path="/register" component={Register} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={DashBoard} />
-                <PrivateRoute exact path="/dashboard/time-management" component={TimeManagement} />
+                <PrivateRoute path="/dashboard/time-management" component={TimeManagement} />
                 <PrivateRoute path="/dashboard/kanban" component={Kanban} />
+                <PrivateRoute path="/dashboard/settings" component={Settings} />
               </Switch>
             </Switch>
           </div>

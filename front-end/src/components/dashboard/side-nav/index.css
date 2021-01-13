@@ -1,7 +1,10 @@
 .side__nav__container {
     background-color: white;
-    width: 250px;
+    width: 250px !important;
     height: 100%;
+    -webkit-box-shadow: 10px 0px 8px -13px rgba(66,66,66,1);
+-moz-box-shadow: 10px 0px 8px -13px rgba(66,66,66,1);
+box-shadow: 10px 0px 8px -13px rgba(66,66,66,1);
 }
 .top__side__nav__container {
     width: 100%;
