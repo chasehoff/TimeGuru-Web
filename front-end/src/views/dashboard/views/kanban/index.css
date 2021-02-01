@@ -1,0 +1,9 @@
+.kanban__content {
+    display: flex;
+    flex-direction: column;
+}
+.kanban__column__containers {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SideNav from '../../../../components/dashboard/side-nav/SideNav';
 import TopNav from '../../../../components/dashboard/top-nav/TopNav';
 
+import './index.css';
 
-function Test() {
+function Kanban() {
     return (
         <div className="dashboard__container">
             <TopNav />
@@ -11,7 +12,10 @@ function Test() {
                 <SideNav />
                 {/* Main Dashboard Data */}
                 <div className="dashboard__content__container">
-                    <h1>Kanban</h1>
+                    <div className="kanban__content">
+                        
+                    </div>
+                    
                 </div>
                 
             </div>
@@ -19,4 +23,4 @@ function Test() {
     )
 }
 
-export default Test;
+export default Kanban;
