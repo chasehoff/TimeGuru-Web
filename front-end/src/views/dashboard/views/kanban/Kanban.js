@@ -16,26 +16,24 @@ function Kanban() {
             <div className="dashboard__second__container">
                 <SideNav />
                 {/* Main Dashboard Data */}
-                <div className="dashboard__content__container">
-                    <DragDropContext>
-                        <Droppable droppableId="all-categories" direction="horizontal" type="category">
-                            {(provided) => (
-                                <div {...provided.droppableProps} ref={provided.innerRef}>
-                                {defCatOrder.map((catId, index)=>{
-                                    const category = categories[catId];
-                                    const cards = category.cardIds.map(cardId => defaultCards[cardId])
-                                    {console.log(cards)}
-                                    return <Category key={category.id} index={index} category={category} cards={cards} />
-                                        
-                                })}
-                                {provided.placeholder}
-                                </div>
-                            )
-                            }
-                        </Droppable>
-                    </DragDropContext>
+                <DragDropContext>
+                    <Droppable droppableId="all-categories" direction="horizontal" type="category">
+                        {(provided) => (
+                            <div className="dashboard__kanban__container" {...provided.droppableProps} ref={provided.innerRef}>
+                            {defCatOrder.map((catId, index)=>{
+                                const category = categories[catId];
+                                const cards = category.cardIds.map(cardId => defaultCards[cardId])
+                                {console.log(cards)}
+                                return <Category key={category.id} index={index} category={category} cards={cards} />
+                                    
+                            })}
+                            {provided.placeholder}
+                            </div>
+                        )
+                        }
+                    </Droppable>
+                </DragDropContext>
                     
-                </div>
                 
             </div>
         </div>

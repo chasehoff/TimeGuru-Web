@@ -1,6 +1,7 @@
 import React from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Card from './Card';
+import Tooltip from '@material-ui/core/Tooltip'
 import './Category.css';
 
 function Category(props) {
@@ -11,8 +12,17 @@ function Category(props) {
                     <div className="container__category" {...provided.draggableProps} ref={provided.innerRef}>
                         <div className="container__category__header" {...provided.dragHandleProps}>
                             <h3>{props.category.title}</h3>
+                            <div className="category__header__btn__section">
+                                <Tooltip title="Delete Category" placement="top">
+                                    <div className="category__header__delete" />
+                                </Tooltip>
+                                <Tooltip title="Edit Category" placement="top">
+                                    <div className="category__header__edit" />
+                                </Tooltip>
+                            </div>
+                            
                         </div>
-                        <Droppable droppableId={props.category.id} type="card">
+                        <Droppable className="container__category__cards__section" droppableId={props.category.id} type="card">
                             {
                                 (provided) => (
                                     <div {...provided.droppableProps} ref={provided.innerRef}>
