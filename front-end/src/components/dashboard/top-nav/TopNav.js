@@ -10,7 +10,6 @@ import { NavLink } from 'react-router-dom';
 function TopNav() {
     //delete later testing purposes
     const user = useSelector(state => state.auth.user);
-    console.log(user);
     return (
         <div className="dashboard__top__nav">
             <div className="guru__logo__container">

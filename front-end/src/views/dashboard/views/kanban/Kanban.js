@@ -1,43 +1,98 @@
-import React, { useState } from 'react';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import React, { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { Reorder } from "./Utils";
 import SideNav from '../../../../components/dashboard/side-nav/SideNav';
 import TopNav from '../../../../components/dashboard/top-nav/TopNav';
-import Category from '../kanban/Category';
+import Card from "./Card";
+import AppsIcon from '@material-ui/icons/Apps';
+import './Category.css';
 
-import './index.css';
+// fake data generator
+const getCategories = (count) => {
+    Array.from({ length: count }, (v, k) => k).map(k => ({
+    id: `category-${k}`,
+    content: `category ${k}`,
+    cards: [`card-1`, `card-2`, `card-3`]
+}))};
 
 function Kanban() {
-    const categories = {"96107280-4c70-400e-9bb6-42d2c875303a":{"id":"96107280-4c70-400e-9bb6-42d2c875303a","title":"To Do","cardIds":["468d7581-74b8-4590-b1ed-2c0417bd1c61","86d4e012-7ee3-4865-b978-2cba8c7228c9","18a52798-71a6-438b-a9b3-635f0362457c","aa70a23b-8b0c-4360-b76d-8d0049732b08","1178c4f0-8744-440e-a260-dc80258eec2e"]},"25a315f8-09fc-4389-b82d-ba55827540de":{"id":"25a315f8-09fc-4389-b82d-ba55827540de","title":"Doing","cardIds":[]},"e2119815-a82a-46c2-8d1b-2be8e44e712f":{"id":"e2119815-a82a-46c2-8d1b-2be8e44e712f","title":"Done","cardIds":[]}}
-    const defaultCards = {"468d7581-74b8-4590-b1ed-2c0417bd1c61":{"id":"468d7581-74b8-4590-b1ed-2c0417bd1c61","header":"Create First Category","description":"Click on the add category text box, and create your very first category box!","importance":"#cddc39","dueDate":"2020-12-31","timeDue":"00:00"},"86d4e012-7ee3-4865-b978-2cba8c7228c9":{"id":"86d4e012-7ee3-4865-b978-2cba8c7228c9","header":"Create First Task","description":"Click on the \"Add Task\" button within your desired column, then chose the title, description, due date, color, and time due.","importance":"#ffeb3b","dueDate":"2020-12-31","timeDue":"00:00"},"18a52798-71a6-438b-a9b3-635f0362457c":{"id":"18a52798-71a6-438b-a9b3-635f0362457c","header":"Delete a Category","description":"Select a desired category to delete! Remember, if this category contains cards you will not be able to undo it!.","importance":"#ffc107","dueDate":"2020-12-31","timeDue":"00:00"},"aa70a23b-8b0c-4360-b76d-8d0049732b08":{"id":"aa70a23b-8b0c-4360-b76d-8d0049732b08","header":"Delete a Task","description":"Delete a desired task within a category. Remeber, you will not be able to get this data back once deleted!","importance":"#f44336","dueDate":"2020-12-31","timeDue":"00:00"},"1178c4f0-8744-440e-a260-dc80258eec2e":{"id":"1178c4f0-8744-440e-a260-dc80258eec2e","header":"Edit a Task","description":"Click \"Edit Task\" on the task you would like to edit. Change the inputs to your likings then click \"Update\"!","importance":"#9c27b0","dueDate":"2020-12-31","timeDue":"00:00"}}
-    const defCatOrder = ["96107280-4c70-400e-9bb6-42d2c875303a","25a315f8-09fc-4389-b82d-ba55827540de","e2119815-a82a-46c2-8d1b-2be8e44e712f"];
+    const [ categories, setCategories] = useState([{id: 'category-1', content: 'category 1', cards: [`card-1`, `card-2`, `card-3`]},{id: 'category-2', content: 'category 2', cards: [`card-1`, `card-2`, `card-3`]},{id: 'category-3', content: 'category 3', cards: [`card-1`, `card-2`, `card-3`]}])
+
+    const onDragEnd = (result) => {
+    // dropped outside the list
+    if (!result.destination) {
+      //console.log("no-change");
+      return;
+    }
+
+    if (result.type === "categories") {
+      console.log(result);
+      console.log(result.source.index)
+      console.log(result.destination.index)
+      const newCategories = Reorder(
+        categories,
+        result.source.index,
+        result.destination.index
+      );
+
+      setCategories(newCategories);
+    } else {
+      const cards = Reorder(
+        categories[parseInt(result.type, 10)].cards,
+        result.source.index,
+        result.destination.index
+      );
+
+      const newCategories = JSON.parse(JSON.stringify(categories));
+
+      newCategories[result.type].cards = cards;
+
+      setCategories(newCategories);
+    }
+  }
+
+  // Normally you would want to split things out into separate components.
+  // But in this example everything is just done in one place for simplicity
     return (
         <div className="dashboard__container">
             <TopNav />
             <div className="dashboard__second__container">
                 <SideNav />
-                {/* Main Dashboard Data */}
-                <DragDropContext>
-                    <Droppable droppableId="all-categories" direction="horizontal" type="category">
-                        {(provided) => (
-                            <div className="dashboard__kanban__container" {...provided.droppableProps} ref={provided.innerRef}>
-                            {defCatOrder.map((catId, index)=>{
-                                const category = categories[catId];
-                                const cards = category.cardIds.map(cardId => defaultCards[cardId])
-                                {console.log(cards)}
-                                return <Category key={category.id} index={index} category={category} cards={cards} />
-                                    
-                            })}
-                            {provided.placeholder}
-                            </div>
-                        )
-                        }
+                <DragDropContext onDragEnd={onDragEnd}>
+                    <Droppable droppableId="droppable" direction="horizontal" type="categories">
+                    {(provided) => (
+                        <div className="dashboard__kanban__container" ref={provided.innerRef}>
+                        {categories.map((category, index) => (
+                            <Draggable
+                            key={category.id}
+                            draggableId={category.id}
+                            index={index}
+                            >
+                            
+                            {(provided) => (
+                                <div className="container__category"
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                >
+                                {category.content}
+                                <span {...provided.dragHandleProps}>
+                                    <AppsIcon
+                                    />
+                                </span>
+                                <Card categoryNum={index} category={category} />
+                                </div>
+                            )}
+                            </Draggable>
+                        ))}
+                        {provided.placeholder}
+                        </div>
+                    )}
                     </Droppable>
                 </DragDropContext>
-                    
-                
             </div>
         </div>
-    )
+    );
+
 }
 
 export default Kanban;

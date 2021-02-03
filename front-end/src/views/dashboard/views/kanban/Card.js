@@ -1,20 +1,40 @@
-import React from 'react';
-import { Draggable } from 'react-beautiful-dnd';
-import './Card.css';
+import React from "react";
+import { Droppable, Draggable } from "react-beautiful-dnd";
+import AppsIcon from '@material-ui/icons/Apps';
 
-function Card(props) {
-    return (
-        <Draggable draggableId={props.card.id} index={props.index}>
-            {
-                (provided) => (
-                    <div className="container__card" id={props.card.id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                        <h3>{props.card.header}</h3>
-                        <p>Placeholder text</p>
-                    </div>
-                )
-            }
-        </Draggable>
-    )
-}
+const Card = props => {
+  const { category, categoryNum } = props;
+  return (
+    <Droppable droppableId={`droppable${category.id}`} type={`${categoryNum}`}>
+      {(provided) => (
+        <div
+          ref={provided.innerRef}>
+          {category.cards.map((card, index) => {
+            return (
+              <Draggable
+                key={`${categoryNum}${index}`}
+                draggableId={`${categoryNum}${index}`}
+                index={index}
+              >
+                {(provided) => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}>
+                    <span {...provided.dragHandleProps}>
+                      <AppsIcon
+                      />
+                    </span>
+                    {card}
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
+          {provided.placeholder}
+        </div>
+      )}
+    </Droppable>
+  );
+};
 
 export default Card;

@@ -1,3 +1,19 @@
 .container__card {
-    background-color: lightblue;
+    background-color: white;
+    margin: .5rem;
+}
+.card__header__container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2E2E2E;
+    padding: .5rem;
+    color: #00FDDC;
+}
+.card__header__btn__section {
+    width: 18%;
+    display: flex;
+    justify-content: space-between;
+}
+.card__content {
+    padding: .5rem;
 }

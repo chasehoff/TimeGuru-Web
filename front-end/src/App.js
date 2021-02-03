@@ -38,7 +38,6 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
-console.log(store);
 
 function App() {
     return (
