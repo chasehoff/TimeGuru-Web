@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import TopNav from "../../components/dashboard/top-nav/TopNav";
 import SideNav from "../../components/dashboard/side-nav/SideNav";
-import { Route, Switch } from "react-router-dom";
 import './index.css'
-import Test from "../../components/test/Test";
 
 class Dashboard extends Component {
     onLogoutClick = (e) => {
@@ -14,13 +12,14 @@ class Dashboard extends Component {
         this.props.logoutUser();
     };
     render() {
+        
         return (
             <div className="dashboard__container">
                 <TopNav />
                 <div className="dashboard__second__container">
                     <SideNav />
                     <div className="dashboard__content__container">
-                        <button onClick={this.onLogoutClick}>Logout</button>
+                        <input onClick={this.onLogoutClick} value="logout"/>
                     </div>
                     
                 </div>

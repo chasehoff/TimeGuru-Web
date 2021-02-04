@@ -1,0 +1,19 @@
+.action__btn__group {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: .5rem;
+}
+.action__btn__textarea {
+    resize: none;
+    width: 300px;
+    margin: 0 .5rem;
+    padding: .5rem;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    min-width: 272px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: inherit;
+}

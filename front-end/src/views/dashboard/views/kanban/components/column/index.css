@@ -1,0 +1,15 @@
+.column__container {
+    background-color: transparent;
+    background-color: whitesmoke;
+    margin-right: 2rem;
+    border-radius: 3px;
+}
+.column__container__header {
+    background-color: #2E2E2E;
+    padding: .5rem;
+    font-size: 1.2rem;
+    border-radius: 3px 3px 0 0;
+}
+.column__container__header h3 {
+    color: #00FDDC;
+}

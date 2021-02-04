@@ -1,0 +1,6 @@
+.kanban__container {
+    display: flex;
+    margin: 2rem;
+    align-items:flex-start;
+  align-content:flex-start;
+}

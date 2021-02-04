@@ -1,0 +1,7 @@
+.column__item__container {
+    background-color: white;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 3px;
+    width: 300px;
+}
