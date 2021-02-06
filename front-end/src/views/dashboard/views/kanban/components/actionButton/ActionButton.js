@@ -5,13 +5,13 @@ import './index.css';
 import { Button } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
-import { addList } from '../../../../../../actions/types';
+import { addList, addCard } from '../../../../../../actions/types';
 
 class ActionButton extends Component {
 
     state = {
         formOpen: false,
-
+        text: ""
     }
 
     toggleForm = () => {
@@ -50,11 +50,25 @@ class ActionButton extends Component {
         const { text } = this.state;
         
         if(text) {
+            this.setState({
+                text: ""
+            })
             dispatch(addList(text));
         }
 
         //if not true return
         return;
+    }
+    handleAddCard = () => {
+        const { dispatch, listID } = this.props;
+        const { text } = this.state;
+
+        if(text) {
+            this.setState({
+                text: ""
+            })
+            dispatch(addCard(listID, text))
+        }
     }
 
     renderForm = () => {
@@ -67,8 +81,8 @@ class ActionButton extends Component {
                 <TextArea className="action__btn__textarea" placeholder={placeholder} autoFocus onBlur={this.toggleForm} value={this.state.text} onChange={this.handleInputChange} />
             </div>
             <div className="action__btn__group">
-                <Button className="action__btn" variant="contained" style={{color: "white", backgroundColor: "#5aac44"}}>{buttonTitle}</Button>
-                <CloseIcon style={{marginLeft: '1rem'}} onclick={this.toggleForm} />
+                <Button onMouseDown={list ? this.handleAddList : this.handleAddCard} className="action__btn" variant="contained" style={{color: "white", backgroundColor: "#5aac44"}}>{buttonTitle}</Button>
+                <CloseIcon style={{marginLeft: '1rem'}} onClick={this.toggleForm} />
             </div>
         </div>
             

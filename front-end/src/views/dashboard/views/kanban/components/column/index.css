@@ -3,6 +3,7 @@
     background-color: whitesmoke;
     margin-right: 2rem;
     border-radius: 3px;
+    min-width: 315px;
 }
 .column__container__header {
     background-color: #2E2E2E;
