@@ -6,13 +6,12 @@
 }
 .action__btn__textarea {
     resize: none;
-    width: 300px;
+    width: 284px;
     margin: 0 .5rem;
     padding: .5rem;
     outline: none;
     border: none;
     overflow: hidden;
-    min-width: 272px;
     border-radius: 3px;
     font-family: inherit;
     font-size: inherit;

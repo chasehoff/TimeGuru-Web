@@ -3,8 +3,6 @@ import ActionButton from '../actionButton/ActionButton';
 import ColumnItem from '../columnItem/ColumnItem';
 import './index.css';
 import { Draggable, Droppable } from "react-beautiful-dnd";
-import { string } from 'prop-types';
-import { Provider } from 'react-redux';
 
 function Column({ title, cards, listID, index }) {
     return (
@@ -18,10 +16,10 @@ function Column({ title, cards, listID, index }) {
                                     <h3>{title}</h3>
                                 </div>
                                 {
-                                    cards.map((card,i) => <ColumnItem  key={card.id} text={card.text} id={card.id} index={i} />)
+                                    cards.map((card,i) => <ColumnItem  key={card.id} title={card.title} listID={listID} text={card.text} id={card.id} index={i} />)
                                 }
-                                <ActionButton listID={listID} />
                                 {provided.placeholder}
+                                <ActionButton listID={listID} />
                             </div>
                         )}
                     </Droppable>

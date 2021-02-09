@@ -1,4 +1,4 @@
-import { ADD_CARD, ADD_LIST, DRAG_HAPPENED } from "../actions/types";
+import { ADD_CARD, ADD_LIST, DELETE_CARD, DRAG_HAPPENED } from "../actions/types";
 let listID = 2;
 let cardID = 5;
 const initialState = [
@@ -8,10 +8,12 @@ const initialState = [
         cards: [
             {
                 id: `card-${0}`,
+                title: "Finish test",
                 text: "We created a static list shit"
             },
             {
                 id: `card-${1}`,
+                title: "Run Errands",
                 text: "Ashland is obsessed with reeces asjdf;laksjdf asdf;lkjasd f;lkjasd f;lksajdfl;k"
             }
         ]
@@ -22,14 +24,17 @@ const initialState = [
         cards: [
             {
                 id: `card-${2}`,
+                title: "finisdaslkdfj",
                 text: "We created a static list shit"
             },
             {
                 id: `card-${3}`,
+                title: "Finish Homework",
                 text: "What a bad ass"
             },
             {
                 id: `card-${4}`,
+                title: "WTF BOI",
                 text: "What a bad ass"
             }
         ]
@@ -102,6 +107,22 @@ const listsReducer = (state = initialState, action) => {
                 //put card in new list
                 listEnd.cards.splice(droppableIndexEnd, 0, ...card)
             }
+
+            return newState;
+        }
+        
+        case DELETE_CARD: {
+            //destructre payload
+            const { listID, cardIndex } = action.payload;
+            
+            //copy state
+            const newState = [...state];
+
+            //find the list the card belongs too
+            const list = newState.find( list => list.id === listID)
+
+            //splice the card from the list
+            list.cards.splice(cardIndex,1)
 
             return newState;
         }

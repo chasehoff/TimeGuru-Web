@@ -56,7 +56,7 @@ class ActionButton extends Component {
             dispatch(addList(text));
         }
 
-        //if not true return
+        // if not true return
         return;
     }
     handleAddCard = () => {

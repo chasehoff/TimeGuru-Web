@@ -1,7 +1,24 @@
 .column__item__container {
     background-color: white;
-    padding: .5rem;
     margin: .5rem;
     border-radius: 3px;
     width: 300px;
+}
+.column__item__container__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 3px 3px 0 0;
+    padding: .25rem .25rem;
+}
+.column__item__container__text {
+    padding: .5rem .25rem;
+    border-radius: 3px 3px 0 0;
+}
+.column__item__delete__button {
+    transition: .2s ease-in-out all;
+}
+.column__item__delete__button:hover {
+    color: #db3914 !important;
 }
