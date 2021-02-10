@@ -1,4 +1,4 @@
-import { ADD_CARD, DELETE_CARD } from "./types";
+import { ADD_CARD, DELETE_CARD, DELETE_COLUMN } from "./types";
 
 export const addCard = (listID,text) => {
     return {

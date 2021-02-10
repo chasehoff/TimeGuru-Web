@@ -4,7 +4,6 @@ import { Draggable } from 'react-beautiful-dnd';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 import { deleteCard } from '../../../../../../actions/types';
-import Modal from '@material-ui/core/Modal';
 
 function ColumnItem({listID, title, text, id, index}) {
     const dispatch = useDispatch();

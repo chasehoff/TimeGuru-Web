@@ -1,4 +1,4 @@
-import { ADD_CARD, ADD_LIST, DELETE_CARD, DRAG_HAPPENED } from "../actions/types";
+import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED } from "../actions/types";
 let listID = 2;
 let cardID = 5;
 const initialState = [
@@ -127,6 +127,17 @@ const listsReducer = (state = initialState, action) => {
             return newState;
         }
 
+        case DELETE_COLUMN: {
+            //destructuring payload
+            const { listID, index } = action.payload;
+
+            const newState = [...state];
+
+            newState.splice(index,1);
+            return newState;
+
+
+        }
 
         default:
             return state;

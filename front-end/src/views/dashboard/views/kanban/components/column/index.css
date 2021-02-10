@@ -6,11 +6,17 @@
     min-width: 315px;
 }
 .column__container__header {
+    display: flex;
+    align-items: center;
     background-color: #2E2E2E;
     padding: .5rem;
     font-size: 1.2rem;
     border-radius: 3px 3px 0 0;
+    justify-content: space-between;
 }
 .column__container__header h3 {
     color: #00FDDC;
+}
+.column__container__header__delete {
+    color: lightgrey !important;
 }

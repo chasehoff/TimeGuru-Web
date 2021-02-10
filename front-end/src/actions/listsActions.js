@@ -1,5 +1,6 @@
-import { ADD_LIST } from "../actions/types"
-import { DRAG_HAPPENED } from "../actions/types"; 
+import { ADD_LIST } from "../actions/types";
+import { DRAG_HAPPENED } from "../actions/types";
+import { DELETE_COLUMN } from "../actions/types";
 
 export const addList = (title) => {
     return {
@@ -26,3 +27,9 @@ export const sort = (droppableIdStart,
             }
         }
 };
+export const deleteColumn = (listID, index) => {
+    return {
+        type: DELETE_COLUMN,
+        payload: {listID, index}
+    }
+}
