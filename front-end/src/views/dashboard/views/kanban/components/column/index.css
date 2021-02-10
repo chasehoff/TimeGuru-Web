@@ -18,5 +18,22 @@
     color: #00FDDC;
 }
 .column__container__header__delete {
-    color: lightgrey !important;
+    background-color: #f55f36;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.column__dialog__buttons {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+.column__dialog__buttons__delete {
+    background-color: #f55f36;
+    border-radius: 4px;
+    padding: .5rem;
+    cursor: pointer;
+}
+.column__dialog__buttons__cancel {
+    cursor: pointer;
 }

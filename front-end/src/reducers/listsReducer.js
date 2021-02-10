@@ -3,41 +3,25 @@ let listID = 2;
 let cardID = 5;
 const initialState = [
     {
-        title: "Last Episode",
+        title: "To Do",
         id: `list-${0}`,
         cards: [
             {
                 id: `card-${0}`,
-                title: "Finish test",
-                text: "We created a static list shit"
-            },
-            {
-                id: `card-${1}`,
-                title: "Run Errands",
-                text: "Ashland is obsessed with reeces asjdf;laksjdf asdf;lkjasd f;lkjasd f;lksajdfl;k"
+                title: "Welcome Card",
+                text: "This is your first task! Drag it to the doing category to get started!"
             }
         ]
     },
     {
-        title: "Next Episode",
+        title: "Doing",
         id: `list-${1}`,
-        cards: [
-            {
-                id: `card-${2}`,
-                title: "finisdaslkdfj",
-                text: "We created a static list shit"
-            },
-            {
-                id: `card-${3}`,
-                title: "Finish Homework",
-                text: "What a bad ass"
-            },
-            {
-                id: `card-${4}`,
-                title: "WTF BOI",
-                text: "What a bad ass"
-            }
-        ]
+        cards: []
+    },
+    {
+        title: "Done",
+        id: `list-${2}`,
+        cards: []
     }
 ]
 

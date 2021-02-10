@@ -17,8 +17,9 @@
     border-radius: 3px 3px 0 0;
 }
 .column__item__delete__button {
-    transition: .2s ease-in-out all;
-}
-.column__item__delete__button:hover {
-    color: #db3914 !important;
+    background-color: #f55f36;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
 }

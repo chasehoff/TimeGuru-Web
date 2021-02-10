@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './index.css';
 import { Draggable } from 'react-beautiful-dnd';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 import { deleteCard } from '../../../../../../actions/types';
+import { Tooltip } from '@material-ui/core';
 
 function ColumnItem({listID, title, text, id, index}) {
     const dispatch = useDispatch();
@@ -20,7 +20,10 @@ function ColumnItem({listID, title, text, id, index}) {
                         <div className="column__item__container__header">
                             <h5>{title}</h5>
                             <div>
-                                <DeleteIcon className="column__item__delete__button" onClick={()=> handleDeleteCard(listID, index)} />
+                                <Tooltip title="Delete Card" placement="top">
+                                    <div className="column__item__delete__button" onClick={()=> handleDeleteCard(listID, index)} />
+                                </Tooltip>
+                                
                             </div>
                         </div>
                         
