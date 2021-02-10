@@ -46,11 +46,9 @@ function Column({ title, cards, listID, index }) {
                                     <Tooltip title="Delete Column" placement="top">
                                         <div className="column__container__header__delete" onClick={()=> setOpen(true)}/> 
                                     </Tooltip>
-                                    
-                                    {/*() => deleteList(listID, index) */}
                                 </div>
                                 {
-                                    cards.map((card,i) => <ColumnItem  key={card.id} title={card.title} listID={listID} text={card.text} id={card.id} index={i} />)
+                                    cards.map((card,i) => <ColumnItem  key={card.id} title={card.title} listID={listID} text={card.text} id={card.id} index={i} listTitle={title}/>)
                                 }
                                 {provided.placeholder}
                                 <ActionButton listID={listID} />

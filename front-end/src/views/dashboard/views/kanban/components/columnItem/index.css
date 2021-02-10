@@ -16,6 +16,9 @@
     padding: .5rem .25rem;
     border-radius: 3px 3px 0 0;
 }
+.column__item__container__header__buttons {
+    display: flex;
+}
 .column__item__delete__button {
     background-color: #f55f36;
     height: 18px;
@@ -32,4 +35,12 @@
 }
 .column__header__input:focus {
     outline:none;
+}
+.column__item__edit__button {
+    background-color: #f0f765;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: .25rem;
 }
