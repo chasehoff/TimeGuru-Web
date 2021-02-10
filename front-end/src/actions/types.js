@@ -10,3 +10,4 @@ export const ADD_LIST = "ADD_LIST";
 export const DRAG_HAPPENED = "DRAG_HAPPENED";
 export const DELETE_CARD = "DELETE_CARD";
 export const DELETE_COLUMN = "DELETE_COLUMN";
+export const EDIT_COLUMN_NAME = "EDIT_COLUMN_NAME";

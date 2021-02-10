@@ -1,6 +1,7 @@
 import { ADD_LIST } from "../actions/types";
 import { DRAG_HAPPENED } from "../actions/types";
 import { DELETE_COLUMN } from "../actions/types";
+import { EDIT_COLUMN_NAME } from "../actions/types";
 
 export const addList = (title) => {
     return {
@@ -31,5 +32,11 @@ export const deleteColumn = (listID, index) => {
     return {
         type: DELETE_COLUMN,
         payload: {listID, index}
+    }
+}
+export const editColumnName = (listID, index, title) => {
+    return {
+        type: EDIT_COLUMN_NAME,
+        payload: {listID, index, title}
     }
 }

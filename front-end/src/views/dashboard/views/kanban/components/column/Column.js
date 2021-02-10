@@ -4,9 +4,7 @@ import ColumnItem from '../columnItem/ColumnItem';
 import './index.css';
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { useDispatch } from 'react-redux';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { deleteColumn } from '../../../../../../actions/types';
-import Button from "@material-ui/core/Button";
+import { deleteColumn, editColumnName } from '../../../../../../actions/types';
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -16,7 +14,7 @@ import { Tooltip } from '@material-ui/core';
 function Column({ title, cards, listID, index }) {
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
-    const [disagree, setDisagree ] = useState(false);
+    const [editInputValue, setEditInputValue] = useState(title)
 
     const handleClose = () => {
         setOpen(false);
@@ -27,6 +25,10 @@ function Column({ title, cards, listID, index }) {
         dispatch(deleteColumn(listID, index))
         console.log("delete column works")
     }
+    const updateColumnName = () => {
+        dispatch(editColumnName(listID, index, editInputValue))
+    }
+    
     return (
         <Draggable draggableId={String(listID)} index={index}>
             {(provided) =>
@@ -35,7 +37,12 @@ function Column({ title, cards, listID, index }) {
                         { (provided) => (
                             <div {...provided.droppableProps} ref={provided.innerRef} >
                                 <div className="column__container__header">
-                                    <h3>{title}</h3>
+                                    <div>
+                                        <Tooltip title="Click to edit column title!" placement="top-start">
+                                            <input className="column__header__input" name="title" type="text" value={editInputValue} onChange={(e) => setEditInputValue(e.target.value)} onBlur={updateColumnName} maxLength="15" />
+                                        </Tooltip>
+                                        
+                                    </div>
                                     <Tooltip title="Delete Column" placement="top">
                                         <div className="column__container__header__delete" onClick={()=> setOpen(true)}/> 
                                     </Tooltip>

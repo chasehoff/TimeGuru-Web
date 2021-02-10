@@ -1,4 +1,5 @@
-import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED } from "../actions/types";
+import { List } from "@material-ui/core";
+import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED, EDIT_COLUMN_NAME } from "../actions/types";
 let listID = 2;
 let cardID = 5;
 const initialState = [
@@ -122,7 +123,19 @@ const listsReducer = (state = initialState, action) => {
 
 
         }
+        
+        case EDIT_COLUMN_NAME: {
+            //destructure payload
+            const { listID, index, title } = action.payload;
+            
+            //copy state
+            const newState = [...state];
+            
+            const list = newState.find(list => list.id === listID);
 
+            list.title = title;
+            return newState;
+        }
         default:
             return state;
     }
