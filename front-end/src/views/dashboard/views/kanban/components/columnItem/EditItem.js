@@ -9,14 +9,19 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import { Tooltip } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { editCardTitle } from '../../../../../../actions/types';
+import { editCardTitle, editCardText } from '../../../../../../actions/types';
 
 function EditItem({open, handleClose, title, text, listID, listTitle, index}) {
     const dispatch = useDispatch();
     const [newTitle, setNewTitle] = useState(title);
+    const [newText, setNewText] = useState(text)
 
     const updateCardTitle = (listID, index, newTitle) => {
         dispatch(editCardTitle(listID, index, newTitle))
+    }
+
+    const updateCardText = (listID, index, newText) => {
+        dispatch(editCardText(listID,index, newText));
     }
 
     return (
@@ -42,7 +47,7 @@ function EditItem({open, handleClose, title, text, listID, listTitle, index}) {
                                 <Tooltip title="Card Description" placement="left-start">
                                     <DescriptionIcon />
                                 </Tooltip>
-                                <textarea className="edit__item__description" value={text} rows="6" />
+                                <textarea className="edit__item__description" value={newText} onChange={(e) => setNewText(e.target.value)} onBlur={()=> updateCardText(listID, index, newText)} rows="6" />
                             </div>
                         </div>
                         <div className="edit__item__section">

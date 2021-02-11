@@ -12,3 +12,4 @@ export const DELETE_CARD = "DELETE_CARD";
 export const DELETE_COLUMN = "DELETE_COLUMN";
 export const EDIT_COLUMN_NAME = "EDIT_COLUMN_NAME";
 export const EDIT_CARD_TITLE = "EDIT_CARD_TITLE";
+export const EDIT_CARD_TEXT = "EDIT_CARD_TEXT";

@@ -1,5 +1,5 @@
 import { List } from "@material-ui/core";
-import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED, EDIT_CARD_TITLE, EDIT_COLUMN_NAME } from "../actions/types";
+import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED, EDIT_CARD_TEXT, EDIT_CARD_TITLE, EDIT_COLUMN_NAME } from "../actions/types";
 let listID = 2;
 let cardID = 5;
 const initialState = [
@@ -152,6 +152,21 @@ const listsReducer = (state = initialState, action) => {
             return newState;
         }
 
+        case EDIT_CARD_TEXT: {
+            //DESTRUCTURE FOR THE 40000 TIME
+            const { listID, cardIndex, newText} = action.payload;
+
+            //copy state again...
+            const newState = [...state];
+
+            const list = newState.find(list => list.id === listID);
+
+            const card = list.cards[cardIndex];
+
+            card.text = newText;
+
+            return newState;
+        }
         default:
             return state;
     }
