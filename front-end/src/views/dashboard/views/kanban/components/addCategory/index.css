@@ -1,0 +1,21 @@
+.add__category__container {
+    display: flex;
+    align-items: center;
+}
+.add__category__container input {
+    background-color: whitesmoke;
+    border: none;
+    padding: .53rem;
+    font-size: inherit;
+    border-radius: 4px 0 0 4px;
+}
+.add__category__container input:focus {
+    outline: none;
+}
+.add__category__icon {
+    background-color: lightgray !important;
+    padding: .40rem;
+    color: darkgrey !important;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}

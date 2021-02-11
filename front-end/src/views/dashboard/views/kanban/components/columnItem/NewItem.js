@@ -58,7 +58,7 @@ function NewItem({open, handleClose, listID, listTitle}) {
             </DialogContent>
             <DialogActions className="column__dialog__buttons">
                 <p style={{ color: 'red'}}>{error}</p>
-                <div onClick={newCardSubmission}>Add Card</div>
+                <div style={{cursor: 'pointer'}} onClick={newCardSubmission}>Add Card</div>
             </DialogActions>
         </Dialog>
     )

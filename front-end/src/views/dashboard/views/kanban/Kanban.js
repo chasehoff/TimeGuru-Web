@@ -8,10 +8,9 @@ import './index.css';
 import ActionButton from './components/actionButton/ActionButton';
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../../../../actions/types";
+import AddCategory from './components/addCategory/AddCategory';
 
-class Kanban extends Component {
-
-
+class Kanban extends Component { 
   onDragEnd = (result) => {
     const { destination, source, draggableId, type } = result;
 
@@ -44,7 +43,7 @@ class Kanban extends Component {
                       {(provided) =>
                         <div {...provided.droppableProps} ref={provided.innerRef} className="kanban__container">
                           { lists.map((list, i) => <Column listID={list.id} key={list.id} title={list.title} cards={list.cards} index={i} />)}
-                          <ActionButton list />
+                          <AddCategory />
                         </div>
                       
                       }

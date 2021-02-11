@@ -1,6 +1,6 @@
 import { List } from "@material-ui/core";
 import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED, EDIT_CARD_TEXT, EDIT_CARD_TITLE, EDIT_COLUMN_NAME } from "../actions/types";
-let listID = 2;
+let listID = 5;
 let cardID = 5;
 const initialState = [
     {
