@@ -1,6 +1,7 @@
 .add__category__container {
     display: flex;
     align-items: center;
+    padding-right: 2rem;
 }
 .add__category__container input {
     background-color: whitesmoke;

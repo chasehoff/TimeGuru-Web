@@ -10,8 +10,13 @@ function AddCategory() {
     const [category, setCategory] = useState("");
 
     const submitCategory = (category) => {
-        dispatch(addList(category));
-        setCategory("");
+        if(category.length < 3) {
+            return;
+        } else {
+            dispatch(addList(category));
+            setCategory("");
+        }
+        
     }
 
     return (
