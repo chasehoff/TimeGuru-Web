@@ -1,7 +1,7 @@
 .kanban__container {
-  margin: 1rem;
-  height: 97%;
   display: flex;
   align-items:flex-start;
   align-content:flex-start;
+  padding: 1rem;
+  overflow-x: auto;
 }

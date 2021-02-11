@@ -78,9 +78,3 @@ p {
     flex-direction: row;
 	height: 100%;
 }
-.dashboard__content__container {
-    display: flex;
-    flex-direction: row;
-    padding: 1em;
-    width: 90%;
-}

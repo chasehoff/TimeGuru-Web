@@ -37,20 +37,18 @@ class Kanban extends Component {
             <TopNav />
             <div className="dashboard__second__container">
                 <SideNav />
-                <div className="kanban__container">
-                  <DragDropContext onDragEnd={this.onDragEnd}>
-                    <Droppable droppableId="all-lists" direction="horizontal" type="list">
-                      {(provided) =>
-                        <div {...provided.droppableProps} ref={provided.innerRef} className="kanban__container">
-                          { lists.map((list, i) => <Column listID={list.id} key={list.id} title={list.title} cards={list.cards} index={i} />)}
-                          <AddCategory />
-                        </div>
-                      
-                      }
-                      
-                    </Droppable>
-                  </DragDropContext>
-                </div>
+                    <DragDropContext onDragEnd={this.onDragEnd}>
+                      <Droppable droppableId="all-lists" direction="horizontal" type="list">
+                        {(provided) =>
+                          <div {...provided.droppableProps} ref={provided.innerRef} className="kanban__container">
+                            { lists.map((list, i) => <Column listID={list.id} key={list.id} title={list.title} cards={list.cards} index={i} />)}
+                            <AddCategory />
+                          </div>
+                        
+                        }
+                        
+                      </Droppable>
+                    </DragDropContext>
             </div>
         </div>
       
