@@ -24,7 +24,7 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.column__dialog__buttons {
+.column__dialog__confirm__buttons {
     display: flex !important;
     justify-content: space-around !important;
 }

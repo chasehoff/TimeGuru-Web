@@ -62,7 +62,7 @@ function Column({ title, cards, listID, index }) {
                                     Are you sure you want to delete this column?
                                     </DialogContentText>
                                 </DialogContent>
-                                <DialogActions className="column__dialog__buttons">
+                                <DialogActions className="column__dialog__confirm__buttons">
                                     <div className="column__dialog__buttons__cancel" onClick={handleClose}>Cancel</div>
                                     <div className="column__dialog__buttons__delete" onClick={deleteList}>Delete</div>
                                 </DialogActions>
