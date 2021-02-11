@@ -7,7 +7,7 @@
 box-shadow: 10px 0px 8px -13px rgba(66,66,66,1);
 }
 .top__side__nav__container {
-    width: 100%;
+    width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
