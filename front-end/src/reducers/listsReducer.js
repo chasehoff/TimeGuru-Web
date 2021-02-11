@@ -40,6 +40,7 @@ const listsReducer = (state = initialState, action) => {
         }
         case ADD_CARD: {
             const newCard = {
+                title: action.payload.title,
                 text: action.payload.text,
                 id: cardID
             }

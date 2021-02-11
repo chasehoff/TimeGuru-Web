@@ -1,97 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import AddIcon from '@material-ui/icons/Add';
-import TextArea from 'react-textarea-autosize'
-import './index.css';
-import { Button } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-import { connect } from 'react-redux';
-import { addList, addCard } from '../../../../../../actions/types';
+import NewItem from '../columnItem/NewItem';
+import './index.css'
 
-class ActionButton extends Component {
-
-    state = {
-        formOpen: false,
-        text: ""
-    }
-
-    toggleForm = () => {
-        this.setState({
-            formOpen: !this.state.formOpen
-        });
-    }
-
-    renderAddButton = () => {
-        const { list } = this.props;
-
-        const buttonText = list ? "Add another list" : "Add another card";
-        const buttonTextOpacity = list ? 1 : 0.5;
-        const buttonTextColor = list ? "white" : "inherit";
-        const buttonTextBackground = list ? "rgba(0,0,0,.15)" : "inherit";
-
-        return (
-            <div onClick={this.toggleForm} className="action__btn__group" style={{ opacity: buttonTextOpacity,
-            color: buttonTextColor,
-            backgroundColor: buttonTextBackground }}>
+function ActionButton({listID, listTitle}) {
+    const [newOpen, setNewOpen] = useState(false);
+    
+    return (
+        <div>
+            <div className="action__button__container" onClick={() => setNewOpen(true)}>
                 <AddIcon />
-                <p>{buttonText}</p>
+                <p>Add card</p>
             </div>
-        )
-    }
-    
-    handleInputChange = (e) => {
-        //handle state change on text area
-        this.setState({
-            text: e.target.value
-        })
-    }
-
-    handleAddList = () => {
-        const { dispatch } = this.props;
-        const { text } = this.state;
-        
-        if(text) {
-            this.setState({
-                text: ""
-            })
-            dispatch(addList(text));
-        }
-
-        // if not true return
-        return;
-    }
-    handleAddCard = () => {
-        const { dispatch, listID } = this.props;
-        const { text } = this.state;
-
-        if(text) {
-            this.setState({
-                text: ""
-            })
-            dispatch(addCard(listID, text))
-        }
-    }
-
-    renderForm = () => {
-        const { list } = this.props;
-        const placeholder = list ? "Enter list column title..." : "Enter title for this card...";
-
-        const buttonTitle = list ? "Add Column" : "Add Card";
-        return <div>
-            <div>
-                <TextArea className="action__btn__textarea" placeholder={placeholder} autoFocus onBlur={this.toggleForm} value={this.state.text} onChange={this.handleInputChange} />
-            </div>
-            <div className="action__btn__group">
-                <Button onMouseDown={list ? this.handleAddList : this.handleAddCard} className="action__btn" variant="contained" style={{color: "white", backgroundColor: "#5aac44"}}>{buttonTitle}</Button>
-                <CloseIcon style={{marginLeft: '1rem'}} onClick={this.toggleForm} />
-            </div>
+        <NewItem listTitle={listTitle} listID={listID} open={newOpen} handleClose={()=> setNewOpen(false)}/>
         </div>
-            
-    }
 
-    render() {
-        return this.state.formOpen ? this.renderForm() : this.renderAddButton();
-    }
-    
+    )
 }
 
-export default connect()(ActionButton);
+export default ActionButton;

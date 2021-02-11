@@ -51,7 +51,7 @@ function Column({ title, cards, listID, index }) {
                                     cards.map((card,i) => <ColumnItem  key={card.id} title={card.title} listID={listID} text={card.text} id={card.id} index={i} listTitle={title}/>)
                                 }
                                 {provided.placeholder}
-                                <ActionButton listID={listID} />
+                                <ActionButton listID={listID} listTitle={title} />
                                 <Dialog
                                 open={open}
                                 onClose={handleClose}

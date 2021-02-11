@@ -1,9 +1,9 @@
 import { ADD_CARD, DELETE_CARD, EDIT_CARD_TITLE, EDIT_CARD_TEXT } from "./types";
 
-export const addCard = (listID,text) => {
+export const addCard = (listID,title,text) => {
     return {
         type: ADD_CARD,
-        payload: { text, listID }
+        payload: { listID,title,text }
     }
 }
 export const deleteCard = (listID, cardIndex) => {

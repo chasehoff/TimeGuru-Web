@@ -1,18 +1,11 @@
-.action__btn__group {
+.action__button__container {
     display: flex;
     align-items: center;
+    padding: .25rem;
+    color: darkgrey;
     cursor: pointer;
-    margin: .5rem;
+    transition: .2s ease-in-out all;
 }
-.action__btn__textarea {
-    resize: none;
-    width: 284px;
-    margin: 0 .5rem;
-    padding: .5rem;
-    outline: none;
-    border: none;
-    overflow: hidden;
-    border-radius: 3px;
-    font-family: inherit;
-    font-size: inherit;
+.action__button__container:hover {
+    color: lightgreen;
 }
