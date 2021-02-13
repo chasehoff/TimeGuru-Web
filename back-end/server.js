@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const boards = require("./routes/api/boards");
 const app = express();
 // Bodyparser middleware
 app.use(
@@ -22,7 +23,7 @@ mongoose
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
-  
+
 // Passport middleware
 app.use(passport.initialize());
 
@@ -31,6 +32,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/users/board", boards)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
