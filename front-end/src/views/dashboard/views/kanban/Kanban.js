@@ -5,7 +5,6 @@ import Column from './components/column/Column';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './index.css';
-import ActionButton from './components/actionButton/ActionButton';
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { sort } from "../../../../actions/types";
 import AddCategory from './components/addCategory/AddCategory';

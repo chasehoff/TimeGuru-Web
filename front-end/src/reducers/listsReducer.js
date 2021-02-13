@@ -1,4 +1,4 @@
-import { List } from "@material-ui/core";
+import axios from "axios";
 import { ADD_CARD, ADD_LIST, DELETE_CARD, DELETE_COLUMN, DRAG_HAPPENED, EDIT_CARD_TEXT, EDIT_CARD_TITLE, EDIT_COLUMN_NAME } from "../actions/types";
 let listID = 5;
 let cardID = 5;
@@ -173,3 +173,13 @@ const listsReducer = (state = initialState, action) => {
     }
 }
 export default listsReducer;
+
+
+// //thunk actions
+// const saveList = () => (dispatch, getState) => {
+//     const board = getState().lists;
+//     axios
+//       .post("")
+//       .then(res => )
+//       .catch(err => console.error(err));
+// }

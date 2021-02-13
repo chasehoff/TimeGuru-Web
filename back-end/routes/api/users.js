@@ -3,9 +3,11 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+
 // Load User model
 const User = require("../../models/User");
 
@@ -39,6 +41,7 @@ router.post("/register", (req, res) => {
         }
     });
 });
+
 router.post("/login", (req, res) => {
     // Form validation
     const { errors, isValid } = validateLoginInput(req.body);
@@ -64,6 +67,7 @@ router.post("/login", (req, res) => {
                     name: user.name,
                     email: user.email,
                     tier: user.tier,
+                    lists: user.lists,
                     profilePicture: user.profilePicture
                 };
             // Sign token
@@ -88,6 +92,18 @@ router.post("/login", (req, res) => {
         });
     });
 });
-router.post
+router.post("/add-board", (req,res) => {
+    const newList = {
+        boardId: req.body.boardId,
+        title: req.body.title,
+        cards: []
+    };
+    User.findOne({ _id : req.body.userId }).then(user => {
+        user.lists.push(newList);
+        user.save()
+        .then(res.sendStatus(200))
+        .catch(err => console.log(err));
+    })
+})
 
 module.exports = router;

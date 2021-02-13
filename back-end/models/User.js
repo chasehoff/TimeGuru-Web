@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
 // Create Schema
 const UserSchema = new Schema({
   name: {
@@ -23,9 +24,13 @@ const UserSchema = new Schema({
     default: "Free",
     required: true
   },
+  lists: {
+    type: Array,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
   }
-});
+}, {timestamps: true});
 module.exports = User = mongoose.model("users", UserSchema);
