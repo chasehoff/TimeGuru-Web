@@ -2,28 +2,36 @@
     background-color: transparent;
     background-color: whitesmoke;
     margin-right: 2rem;
-    border-radius: 3px;
     min-width: 315px;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
+    box-shadow: 0px 0px 2px 0px rgba(128,128,128,1);
 }
 .column__container__header {
     display: flex;
     align-items: center;
-    background-color: #2E2E2E;
+    color: black;
     padding: .5rem;
     font-size: 1.2rem;
     border-radius: 3px 3px 0 0;
     justify-content: space-between;
 }
-.column__container__header h3 {
-    color: #00FDDC;
+.column__container__header h5 {
+    font-weight: 600;
+    color: black;
 }
 .column__container__header__delete {
-    background-color: #f55f36;
+    color: darkgrey;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     cursor: pointer;
+    transition: .2s ease-in-out all !important;
 }
+.column__container__header__delete:hover {
+    transform: scale(1.2);
+}
+
 .column__dialog__confirm__buttons {
     display: flex !important;
     justify-content: space-around !important;

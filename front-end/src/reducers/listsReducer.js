@@ -36,6 +36,7 @@ const listsReducer = (state = initialState, action) => {
                 id: `list-${listID}`
             }
             listID += 1;
+            
             return [...state, newList ]
         }
         case ADD_CARD: {

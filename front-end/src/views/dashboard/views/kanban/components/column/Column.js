@@ -9,6 +9,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
+import DeleteIcon from '@material-ui/icons/Delete';
 import { Tooltip } from '@material-ui/core';
 
 function Column({ title, cards, listID, index }) {
@@ -44,7 +45,7 @@ function Column({ title, cards, listID, index }) {
                                         
                                     </div>
                                     <Tooltip title="Delete Column" placement="top">
-                                        <div className="column__container__header__delete" onClick={()=> setOpen(true)}/> 
+                                        <DeleteIcon className="column__container__header__delete" onClick={()=> setOpen(true)}/> 
                                     </Tooltip>
                                 </div>
                                 {

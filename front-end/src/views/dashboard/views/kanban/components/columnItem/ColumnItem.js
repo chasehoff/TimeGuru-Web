@@ -6,6 +6,7 @@ import { deleteCard } from '../../../../../../actions/types';
 import { Tooltip } from '@material-ui/core';
 import EditItem from './EditItem';
 
+
 function ColumnItem({listID, title, text, id, index, listTitle}) {
     const dispatch = useDispatch();
     const [editOpen, setEditOpen] = useState(false);

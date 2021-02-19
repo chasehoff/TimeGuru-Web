@@ -92,18 +92,5 @@ router.post("/login", (req, res) => {
         });
     });
 });
-router.post("/add-board", (req,res) => {
-    const newList = {
-        boardId: req.body.boardId,
-        title: req.body.title,
-        cards: []
-    };
-    User.findOne({ _id : req.body.userId }).then(user => {
-        user.lists.push(newList);
-        user.save()
-        .then(res.sendStatus(200))
-        .catch(err => console.log(err));
-    })
-})
 
 module.exports = router;

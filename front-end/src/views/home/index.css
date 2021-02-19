@@ -56,3 +56,7 @@
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--hover); }
 }
+
+.comp-container {
+    position: relative;
+}

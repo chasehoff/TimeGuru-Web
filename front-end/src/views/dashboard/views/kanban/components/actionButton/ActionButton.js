@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import AddIcon from '@material-ui/icons/Add';
 import NewItem from '../columnItem/NewItem';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { Tooltip } from '@material-ui/core';
 import './index.css'
 
 function ActionButton({listID, listTitle}) {
@@ -9,8 +10,10 @@ function ActionButton({listID, listTitle}) {
     return (
         <div>
             <div className="action__button__container" onClick={() => setNewOpen(true)}>
-                <AddIcon />
-                <p>Add card</p>
+                <Tooltip placement="bottom" title="Add Card">
+                    <AddCircleIcon />
+                </Tooltip>
+                
             </div>
         <NewItem listTitle={listTitle} listID={listID} open={newOpen} handleClose={()=> setNewOpen(false)}/>
         </div>

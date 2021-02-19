@@ -1,11 +1,8 @@
 .action__button__container {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: .25rem;
     color: darkgrey;
     cursor: pointer;
-    transition: .2s ease-in-out all;
-}
-.action__button__container:hover {
-    color: lightgreen;
 }

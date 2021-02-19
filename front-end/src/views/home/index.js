@@ -25,8 +25,11 @@ function Home() {
                 </div>
             </div>
             <How />
-            <Companies />
-            <Display />
+            <div className="comp-container">
+                <Companies />
+                <Display />
+            </div>
+            
             <About />
             <Footer />
         </div>
